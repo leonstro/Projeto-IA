@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="chatbot.css"> <!-- Link para o CSS do chatbot -->
+    <script src="chatbot.js" defer></script>
+</head>
+<body>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-box">
+            <div class="chat-header">
+                <h2>PAAPCHAT</h2>
+                <button class="close-btn" onclick="closeChat()">Fechar</button>
+            </div>
+            <div class="chat-body">
+                <!-- Mensagens serão inseridas aqui -->
+            </div>
+            <div class="chat-options">
+                <button class="option-button" onclick="selectOption('Transtorno de Ansiedade')">Transtorno de Ansiedade</button>
+                <button class="option-button" onclick="selectOption('Transtorno Depressivo')">Transtorno Depressivo</button>
+                <button class="option-button" onclick="selectOption('TDAH')">TDAH</button>
+                <button class="option-button" onclick="selectOption('Transtorno Obsessivo-Compulsivo')">TOC</button>
+                <button class="option-button" onclick="selectOption('Transtorno de Estresse Pós-Traumático')">TEPT</button>
+                <button class="option-button" onclick="selectOption('Transtorno de Personalidade')">Transtorno de Personalidade</button>
+                <button class="option-button" onclick="selectOption('Transtorno Alimentar')">Transtorno Alimentar</button>
+                <button class="option-button" onclick="selectOption('Fobias')">Fobias</button>
+                <button class="option-button" onclick="selectOption('Transtorno Bipolar')">Transtorno Bipolar</button>
+                <button class="option-button" onclick="selectOption('Autismo')">Autismo</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function closeChat() {
+            document.getElementById('chat-container').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
