@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça Instituições - PAAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot.css"> <!-- Link para o CSS do chatbot -->
+    <script src="chatbot.js" defer></script>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">PAAP</div>
+            <button class="menu-btn" onclick="toggleSidebar()">Menu</button>
+            <button class="chat-btn" onclick="openChat()">PAAPCHAT</button>
+        </div>
+    </header>
+
+    <div id="sidebar">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="marcar-terapia.html">Marcar Terapia</a></li>
+            <li><a href="como-usar.html">Como Usar o App?</a></li>
+            <li><a href="projetos-instituicoes.html">Projetos e Instituições</a></li>
+            <li><a href="auxilio.html">Auxílio</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <h1>Conheça Instituições</h1>
+        <p>Abaixo você encontrará uma lista de instituições que oferecem apoio e terapias. Cada uma delas pode ajudar você a encontrar o suporte necessário.</p>
+
+        <div class="instituicoes">
+            <div class="instituicao">
+                <h2>UNIT</h2>
+                <p>A Universidade Tiradentes (UNIT) oferece atendimento psicológico na clínica-escola por R$ 20. Os serviços incluem terapia individual e em grupo, <br>avaliações e orientações emocionais, realizados por alunos de psicologia sob supervisão de profissionais. Essa iniciativa visa promover a saúde mental <br> e facilitar o acesso a cuidados psicológicos para a comunidade.</p>
+                <a href="https://www.unit.br/" target="_blank">Saiba mais</a>
+            </div>
+
+            <div class="instituicao">
+                <h2>UNIT</h2>
+                <p>A Universidade Tiradentes (UNIT) oferece atendimento psicológico na clínica-escola por R$ 20. Os serviços incluem terapia individual e em grupo, <br>avaliações e orientações emocionais, realizados por alunos de psicologia sob supervisão de profissionais. Essa iniciativa visa promover a saúde mental <br> e facilitar o acesso a cuidados psicológicos para a comunidade.</p>
+                <a href="https://www.unit.br/" target="_blank">Saiba mais</a>
+            </div>
+
+            <div class="instituicao">
+                <h2>UNIT</h2>
+                <p>A Universidade Tiradentes (UNIT) oferece atendimento psicológico na clínica-escola por R$ 20. Os serviços incluem terapia individual e em grupo, <br>avaliações e orientações emocionais, realizados por alunos de psicologia sob supervisão de profissionais. Essa iniciativa visa promover a saúde mental <br> e facilitar o acesso a cuidados psicológicos para a comunidade.</p>
+                <a href="https://www.unit.br/" target="_blank">Saiba mais</a>
+            </div>
+            
+            <div class="instituicao">
+                <h2>UNIT</h2>
+                <p>A Universidade Tiradentes (UNIT) oferece atendimento psicológico na clínica-escola por R$ 20. Os serviços incluem terapia individual e em grupo, <br>avaliações e orientações emocionais, realizados por alunos de psicologia sob supervisão de profissionais. Essa iniciativa visa promover a saúde mental <br> e facilitar o acesso a cuidados psicológicos para a comunidade.</p>
+                <a href="https://www.unit.br/" target="_blank">Saiba mais</a>
+            </div>
+
+           
+        </div>
+    </main>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function openChat() {
+            document.getElementById('chat-container').style.display = 'flex';
+        }
+    </script>
+
+    <!-- Chatbot Container -->
+    <div class="chat-container" id="chat-container" style="display: none;">
+        <div class="chat-box">
+            <div class="chat-header">
+                <h2>PAAPCHAT</h2>
+                <button class="close-btn" onclick="closeChat()">Fechar</button>
+            </div>
+            <div class="chat-body">
+                <!-- Mensagens serão inseridas aqui -->
+            </div>
+            <div class="chat-options">
+                <button class="option-button" onclick="selectOption('Transtorno de Ansiedade')">Transtorno de Ansiedade</button>
+                <button class="option-button" onclick="selectOption('Transtorno Depressivo')">Transtorno Depressivo</button>
+                <button class="option-button" onclick="selectOption('TDAH')">TDAH</button>
+                <button class="option-button" onclick="selectOption('TOC')">TOC</button>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

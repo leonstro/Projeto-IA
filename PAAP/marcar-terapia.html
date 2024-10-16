@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Terapia - PAAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot.css"> <!-- Link para o CSS do chatbot -->
+    <script src="chatbot.js" defer></script>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">PAAP</div>
+            <button class="menu-btn" onclick="toggleSidebar()">Menu</button>
+            <button class="chat-btn" onclick="openChat()">PAAPCHAT</button>
+        </div>
+    </header>
+
+    <div id="sidebar">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="marcar-terapia.html">Marcar Terapia</a></li>
+            <li><a href="como-usar.html">Como Usar o App?</a></li>
+            <li><a href="projetos-instituicoes.html">Projetos e Instituições</a></li>
+            <li><a href="auxilio.html">Auxílio</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <h1>Marcar Terapia</h1>
+        <form id="therapyForm">
+            <label for="date">Para qual data você gostaria de marcar a terapia?</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="institution">Qual instituição você quer marcar a terapia?</label>
+            <select id="institution" name="institution" required>
+                <option value="">Selecione uma instituição</option>
+                <option value="instituicao1">UNIT</option>
+                <option value="instituicao2">UNIT</option>
+                <option value="instituicao3">UNIT</option>
+                <option value="instituicao4">UNIT</option>
+                <option value="instituicao5">UNIT</option>
+            </select>
+
+            <label for="professional">Escolha o profissional que irá atendê-lo:</label>
+            <select id="professional" name="professional" required>
+                <option value="">Selecione um profissional</option>
+                <option value="profissional1">Eren Antonio Moraes</option>
+                <option value="profissional2">Carla Santiago Bernabeu</option>
+                <option value="profissional3">Seraphine da Fonseca</option>
+                <option value="profissional4">Satoro Gojo</option>
+                <option value="profissional5">Meliodas da Silva</option>
+            </select>
+
+            <button class="btn-marcar-terapia" type="submit">Marcar Terapia</button>
+        </form>
+    </main>
+
+    <!-- Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Terapia Marcada!</h2>
+            <p>Sua terapia foi marcada com sucesso.</p>
+            <p><strong>Data:</strong> <span id="modalDate"></span></p>
+            <p><strong>Instituição:</strong> <span id="modalInstitution"></span></p>
+            <p><strong>Profissional:</strong> <span id="modalProfessional"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Adiciona um evento ao formulário para evitar o envio padrão e abrir o modal
+        document.getElementById("therapyForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            openModal();
+        });
+
+        // Função para abrir o modal
+        function openModal() {
+            const date = document.getElementById("date").value;
+            const institution = document.getElementById("institution").value;
+            const professional = document.getElementById("professional").value;
+
+            // Atualiza o conteúdo do modal
+            document.getElementById("modalDate").textContent = date;
+            document.getElementById("modalInstitution").textContent = institution;
+            document.getElementById("modalProfessional").textContent = professional;
+
+            // Exibe o modal
+            document.getElementById("confirmationModal").style.display = "block";
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById("confirmationModal").style.display = "none";
+        }
+
+        function openChat() {
+            document.getElementById('chat-container').style.display = 'flex';
+        }
+    </script>
+    <!-- Chatbot Container -->
+    <div class="chat-container" id="chat-container" style="display: none;">
+        <div class="chat-box">
+            <div class="chat-header">
+                <h2>PAAPCHAT</h2>
+                <button class="close-btn" onclick="closeChat()">Fechar</button>
+            </div>
+            <div class="chat-body">
+                <!-- Mensagens serão inseridas aqui -->
+            </div>
+            <div class="chat-options">
+                <button class="option-button" onclick="selectOption('Transtorno de Ansiedade')">Transtorno de Ansiedade</button>
+                <button class="option-button" onclick="selectOption('Transtorno Depressivo')">Transtorno Depressivo</button>
+                <button class="option-button" onclick="selectOption('TDAH')">TDAH</button>
+                <button class="option-button" onclick="selectOption('TOC')">TOC</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

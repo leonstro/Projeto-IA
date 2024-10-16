@@ -1,0 +1,24 @@
+/* Reset básico para evitar que o conteúdo ultrapasse a tela */
+body {
+    overflow-x: hidden; /* Impede o overflow horizontal */
+}
+
+/* Estilos para a seção "Como Usar" */
+#como-usar {
+    padding: 20px; /* Espaçamento interno */
+    max-width: 100%; /* Não ultrapassa a largura da tela */
+    overflow-y: auto; /* Permite rolagem vertical se necessário */
+    margin: 0; /* Remove margem */
+}
+
+h2 {
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+ol {
+    padding-left: 20px; /* Adiciona espaço à esquerda da lista */
+}
+
+li {
+    margin-bottom: 10px; /* Espaço entre os itens da lista */
+}
